@@ -7,7 +7,37 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
+	 <script>
+        function minCost(arr) {
+            let cost = 0;
+
+            while (arr.length > 1) {
+
+                // Sort the array
+                arr.sort((a, b) => a - b);
+
+                // Take the two smallest ropes
+                let first = arr.shift();
+                let second = arr.shift();
+
+                // Connect them
+                let sum = first + second;
+
+                // Add cost
+                cost += sum;
+
+                // Put new rope back
+                arr.push(sum);
+            }
+
+            return cost;
+        }
+
+        // Example
+        let arr = [4, 3, 2, 6];
+        console.log(minCost(arr)); 
+    </script>
+
     <script type="text/javascript" src="./script.js">
 </script>
 
